@@ -1,0 +1,117 @@
+\usepackage{amsmath, amsthm, amssymb, dsfont, accents, mathdots, stmaryrd}
+\usepackage{longtable, booktabs}
+\usepackage[allbordercolors=cyan]{hyperref}
+\usepackage{setspace}
+\usepackage[labelfont={small,bf}, font={small, bf}, format=plain]{caption}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage[giveninits=true, maxbibnames=99, sortcites=true]{biblatex}
+\usepackage{xpatch}
+
+% Bold font
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+% \SetSymbolFont{stmry}{bold}{U}{stmry}{b}{n}
+
+% Centered chapter headings
+\renewcommand{\raggedchapter}{\centering}
+
+% Chapter heading margin
+\renewcommand*\chapterheadstartvskip{\vspace*{1in}} 
+
+% Turn of headings
+\pagestyle{plain}
+
+% Hyphenation
+\hyphenation{con-ti-nu-ous}
+
+% Bib files
+\addbibresource{references.bib}
+
+% Remove stupid dots in figures
+\renewcommand*{\figureformat}{%
+  \figurename~\thefigure%
+%  \autodot% DELETED
+}
+\renewcommand*{\tableformat}{%
+  \tablename~\thetable%
+%  \autodot% DELETED
+}
+
+% Adjust spacing in TOC
+\makeatletter
+\renewcommand*{\@pnumwidth}{2.2em}
+\renewcommand*{\@tocrmarg}{3.2em}
+\makeatother
+\renewcommand{\contentsname}{Table of Contents}
+
+% Create list of appendices
+\newcommand\listofloappname{List of Appendices}
+\newcommand*{\listofappendices}{\listoftoc{loapp}}
+\setuptoc{loapp}{totoc}
+
+% Add "Appendices" to toc
+\xapptocmd{\appendix}{
+	\phantomsection %
+	\addcontentsline{toc}{chapter}{Appendices}
+}{}{\PatchFailed}
+
+% Add chapter/appendix to correct list
+\xpatchcmd{\addchaptertocentry}{%
+    \addtocentrydefault{chapter}{#1}{#2}%
+  }{%
+  	\ifstr{\chapapp}{Appendix}{
+		% We are in appendix
+	    \ifstr{#1}{}
+	      {\addtocentrydefault{chapter}{#1}{#2}} % numbered
+	      {\addcontentsline{loapp}{chapter}{\chapapp{} #1. #2}} %unnumbered
+  	}{
+	    % We are before appendix
+	    \ifstr{#1}{}
+	      {\addtocentrydefault{chapter}{#1}{#2}}
+	      {\addtocentrydefault{chapter}{}{\chapapp{} #1. #2}}
+  	}
+  }{}{\PatchFailed}
+
+\xpatchcmd{\addsectiontocentry}{%
+    \addtocentrydefault{section}{#1}{#2}%
+  }{%
+  	\ifstr{\chapapp}{Appendix}{
+		% We are in appendix
+		\addcontentsline{loapp}{section}{\protect\numberline{#1} #2}% numbered
+  	}{
+	    % We are before appendix
+		\addtocentrydefault{section}{#1}{#2}% numbered
+  	}
+  }{}{\PatchFailed}
+
+
+% Control spacing
+\xapptocmd{\mainmatter}
+{
+	\onehalfspacing
+}{}{\PatchFailed}
+\xapptocmd{\backmatter}
+{
+	\singlespacing
+	\sloppy % to not have overfull hboxes in reference list
+}{}{\PatchFailed}
+
+
+% Tikz
+\usepackage{tikz, pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{calc, arrows.meta, shapes.geometric, positioning, scopes, shadows, decorations.markings, external, intersections, fit, patterns}
+\newlength{\figurewidth}
+\newlength{\figureheight}
+\tikzexternalize[prefix=figures_compiled/]
+
+% Dont externalize todos
+\makeatletter
+\renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
+\makeatother
+
+% Nomenclature
+\usepackage[toc,acronym,nonumberlist,subentrycounter]{glossaries}
+\makeglossaries
+\loadglsentries[main]{layout/acronyms.tex}
+% \setkomafont{descriptionlabel}{\normalfont}
+\glstocfalse

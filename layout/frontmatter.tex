@@ -1,0 +1,111 @@
+% title page
+\pagenumbering{Alph}
+\begin{titlepage}
+ % Use single-spaced lines for the title page.
+ \begin{singlespace} %
+  % Move down the page slightly.
+  \hbox{\vspace{1.2in}} %
+  % Center the title page as well.
+  \begin{center} %
+   % Put the title itself in 1.5-spaced format.
+   \begin{onehalfspacing}
+    % Insert the title.
+    {\Large\bfseries A Ph.D Thesis Template Conforming to Requirements at the University of Michigan} %
+   \end{onehalfspacing} \\[4ex] %
+   % Print the word 'by'.
+   by \\[2ex] %
+   % Insert the author
+   Jan Banan \\ %
+   % More rubber space
+   \vfill %
+   % Text from guidelines
+   A dissertation submitted in partial fulfillment \\ %
+   of the requirements for the degree of \\ %
+   % Name of degree
+   Doctor of Philosophy \\ %
+   % Department
+   (Name of the Program) \\ %
+   in the University of Michigan \\ %
+   % Year of completion
+   2017 %
+  \end{center} %
+  % More rubber space
+  \vfill %
+  % Non-justified content
+  \begin{flushleft}
+   % Heading for the committee
+   \hspace{0.7in}Doctoral Committee: \\[2ex] %
+   % Horizontal spacing
+   \hspace{1in} %
+   % Insert the committee (in a box).
+   \parbox{4.2in}{Professor Sven Svensson, Chair\\
+   				  Assistant Professor Sara Svensson\\
+   				  Professor John Doe\\
+   				  Assistant Professor Jane Doe}
+  \end{flushleft} %
+ \end{singlespace} %
+\end{titlepage}
+
+\clearpage
+\thispagestyle{empty}
+
+\hspace{0pt}
+
+\vfill
+
+\begin{center}
+\begin{onehalfspacing}
+  Jan Banan \\
+  \href{mailto:jan.banan@umich.edu}{jan.banan@umich.edu} \\
+  ORCID iD: \href{http://orcid.org/9999-9999-9999-9999}{9999-9999-9999-9999}\\
+  \vspace{0.3in}
+  \copyright\;Jan Banan 2017
+\end{onehalfspacing}
+\end{center}
+
+\vfill
+\hspace{0pt}
+
+
+\cleardoublepage
+
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\listoftodos
+
+\tableofcontents
+
+% LOF
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+% LOT
+\cleardoublepage
+\phantomsection
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+% LOApp
+\cleardoublepage
+\listofappendices
+
+% LOAcr
+\cleardoublepage
+\printglossary[type=\acronymtype, title={List of Acronyms}]
+\addcontentsline{toc}{chapter}{List of Acronyms}
+
+% LOS
+\chapter{List of Symbols}
+\input{layout/notation}
+
+% Abstract
+\chapter{Abstract}
+\onehalfspacing
+
+\input{layout/abstract}
+
+% \chapter{List of Publications}
+% \input{layout/pubs}

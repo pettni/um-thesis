@@ -1,0 +1,35 @@
+%!TEX options=--shell-escape
+
+\documentclass[
+	letterpaper,
+	12pt,
+	oneside,
+	chapterprefix]{scrbook}
+
+% \usepackage[disable]{todonotes}			% No todo notes
+\usepackage[colorinlistoftodos, backgroundcolor=green!40]{todonotes}	% With todo notes
+
+\input{layout/preamble}
+\input{layout/definitions}
+\input{layout/environ}
+
+\begin{document}
+
+\frontmatter
+
+\input{layout/frontmatter}
+
+\mainmatter
+
+\include{chapter1}
+\include{chapter2}
+
+\appendix
+
+\include{appendix1}
+
+\backmatter
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
