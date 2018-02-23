@@ -15,7 +15,7 @@ The recommended tex environment is [TexLive](https://tug.org/texlive/). If you d
 
 	tlmgr install xelatex xstring todonotes bezos chngcntr xpatch doublestroke glossaries mfirstuc xfor biblatex tikz pgfplots
 
-The template can be compiled with latexmk using [settings](http://ctan.mirrors.hoobly.com/support/latexmk/latexmk.pdf) defined in ```.latexmkrc```. The default compiler is ```xelatex``` (to use ```pdflatex``` the ```fontspec``` package must be removed in ```preamble.tex```).
+The template can be compiled with latexmk using [settings](http://ctan.mirrors.hoobly.com/support/latexmk/latexmk.pdf) defined in ```latexmkrc```. The default compiler is ```xelatex``` (to use ```pdflatex``` the ```fontspec``` package must be removed in ```preamble.tex```).
 
 	latexmk um-thesis.tex
 
