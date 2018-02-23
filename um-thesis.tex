@@ -7,12 +7,16 @@
 	oneside,
 	chapterprefix]{scrbook}
 
-\usepackage[disable]{todonotes}											% Hide todo's
-% \usepackage[colorinlistoftodos, backgroundcolor=green!40]{todonotes}	% Show todo's
+% Hide/show todo list
+\usepackage[disable]{todonotes}
+% \usepackage[colorinlistoftodos, backgroundcolor=green!40]{todonotes}
 
 \input{layout/preamble}
 \input{layout/definitions}
 \input{layout/environ}
+
+% Compile selected parts only
+% \includeonly{sources/chapter2, sources/appendix1}
 
 \begin{document}
 
