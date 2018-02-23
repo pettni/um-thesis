@@ -1,6 +1,6 @@
 # um-thesis
 
-Template for a Ph.D. thesis at the University of Michigan. The template is based on the Komascript ```scrbook``` class and is intended to be a modern, lightweight, and customizable alternative to the different ```rac.sty```-based classes. 
+Template for a Ph.D. thesis at the University of Michigan. The template is based on the Komascript ```scrbook``` class and is intended to be a modern, lightweight, and customizable alternative to the different ```rac.sty```-based classes with roots in the 80's. 
 
 ## Features
  - Follows [Rackham requirements](http://www.rackham.umich.edu/content/formatting-dissertation)
