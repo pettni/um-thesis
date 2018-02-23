@@ -1,6 +1,6 @@
 # um-thesis
 
-Template for a Ph.D. thesis at the University of Michigan. The template is based on the Komascript ```scrbook``` class and is intended as a modern, lightweight, and customizable alternative to the different ```rac.sty```-based classes. 
+Template for a Ph.D. thesis at the University of Michigan. The template is based on the Komascript ```scrbook``` class and is intended to be a modern, lightweight, and customizable alternative to the different ```rac.sty```-based classes. 
 
 ## Features
  - Follows [Rackham requirements](http://www.rackham.umich.edu/content/formatting-dissertation)
@@ -15,7 +15,7 @@ The recommended tex environment is [TexLive](https://tug.org/texlive/). If you d
 
 	tlmgr install xelatex xstring todonotes bezos chngcntr xpatch doublestroke glossaries mfirstuc xfor biblatex tikz pgfplots
 
-The template can be compiled with latexmk using [settings](http://ctan.mirrors.hoobly.com/support/latexmk/latexmk.pdf) defined in ```.latexmkrc```. The default compiler is ```xelatex``` (to use ```pdflatex``` the ```fontspec``` package must be removed in ```preamble.tex```).
+The template can be compiled with latexmk using [settings](http://ctan.mirrors.hoobly.com/support/latexmk/latexmk.pdf) defined in ```latexmkrc```. The default compiler is ```xelatex``` (to use ```pdflatex``` the ```fontspec``` package must be removed in ```preamble.tex```).
 
 	latexmk um-thesis.tex
 
@@ -27,8 +27,8 @@ The Koma-Script Bundle is highly customizable, see the [Koma-Script guide](http:
 
 ### Fonts
 
-Fonts are handled with ```fontspec```, the main font can be changed in ```preamble.tex``` by e.g. uncommenting ```\setmainfont{Times New Roman}```. For finer control, use the ```\setkomafont``` commands (for a full list see Chapter 3.6 of the Koma-Script Guide).
+Fonts are handled with ```fontspec```, the main font can be changed in ```preamble.tex``` by e.g. uncommenting ```\setmainfont{Times New Roman}```. For finer control, use the ```\setkomafont{element}``` commands (for a full list of customizable elements, see Chapter 3.6 of the Koma-Script guide).
 
 ## Acknowledgement
 
-The title page formatting is taken from the [thesis-umich.cls](http://www-personal.umich.edu/~dalle/codes/thesis-umich/downloads/thesis-umich.cls) derivation of ```rac.sty```.
+The title page template is taken from the [thesis-umich.cls](http://www-personal.umich.edu/~dalle/codes/thesis-umich/downloads/thesis-umich.cls) derivation of ```rac.sty```.
