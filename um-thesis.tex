@@ -1,3 +1,4 @@
+%!TEX program=xelatex
 %!TEX options=--shell-escape
 
 \documentclass[
@@ -6,8 +7,8 @@
 	oneside,
 	chapterprefix]{scrbook}
 
-% \usepackage[disable]{todonotes}			% No todo notes
-\usepackage[colorinlistoftodos, backgroundcolor=green!40]{todonotes}	% With todo notes
+\usepackage[disable]{todonotes}											% Hide todo's
+% \usepackage[colorinlistoftodos, backgroundcolor=green!40]{todonotes}	% Show todo's
 
 \input{layout/preamble}
 \input{layout/definitions}
@@ -21,12 +22,12 @@
 
 \mainmatter
 
-\include{chapter1}
-\include{chapter2}
+\include{sources/chapter1}
+\include{sources/chapter2}
 
 \appendix
 
-\include{appendix1}
+\include{sources/appendix1}
 
 \backmatter
 

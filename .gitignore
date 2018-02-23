@@ -37,6 +37,7 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+*.xdv
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms
@@ -119,6 +120,7 @@ acs-*.bib
 
 # listings
 *.lol
+*.loapp
 
 # makeidx
 *.idx

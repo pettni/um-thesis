@@ -1,11 +1,17 @@
-\usepackage{amsmath, amsthm, amssymb, dsfont, accents, mathdots, stmaryrd}
+\usepackage{amsmath, amsthm, amssymb, dsfont, mathdots, stmaryrd}
 \usepackage{longtable, booktabs}
 \usepackage[allbordercolors=cyan]{hyperref}
 \usepackage{setspace}
-\usepackage[labelfont={small,bf}, font={small, bf}, format=plain]{caption}
-\usepackage[linesnumbered,ruled]{algorithm2e}
-\usepackage[giveninits=true, maxbibnames=99, sortcites=true]{biblatex}
+\usepackage[giveninits=true, maxbibnames=99, sortcites=true, backend=biber]{biblatex}
 \usepackage{xpatch}
+
+% Control fonts
+\usepackage{fontspec}
+% \setmainfont{Times New Roman}							% main font
+\setkomafont{sectioning}{\normalfont\bfseries}			% titles (chapter, section, etc)
+\setkomafont{title}{\normalfont\Large\bfseries}			% thesis title
+\setkomafont{caption}{\normalfont\small\bfseries}
+\setkomafont{captionlabel}{\normalfont\small\bfseries}
 
 % Continuous footnote numbering
 \usepackage{chngcntr}
@@ -13,7 +19,6 @@
 
 % Bold font
 \SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
-% \SetSymbolFont{stmry}{bold}{U}{stmry}{b}{n}
 
 % Centered chapter headings
 \renewcommand{\raggedchapter}{\centering}
@@ -21,7 +26,7 @@
 % Chapter heading margin
 \renewcommand*\chapterheadstartvskip{\vspace*{1in}} 
 
-% Turn of headings
+% Turn off headings
 \pagestyle{plain}
 
 % Hyphenation
