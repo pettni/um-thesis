@@ -119,6 +119,7 @@ acs-*.bib
 
 # listings
 *.lol
+*.loapp
 
 # makeidx
 *.idx

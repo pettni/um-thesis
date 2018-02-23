@@ -6,15 +6,19 @@
 
 The recommended method of typesetting is to use \texttt{latexmk} which handles acronyms via the \texttt{.latexmkrc} file.
 
+\section{Citations}
+
+Citations are handled with the \href{https://www.ctan.org/pkg/biblatex}{\texttt{biblatex}} and \texttt{biber} as backend. Different citation styles can be used by changing the arguments when loading the biblatex package. Example citation: \cite{Shannon:1949ti}.
+
 \section{Acronyms}
 
-Acronyms are handled via the \href{https://www.ctan.org/pkg/glossaries}{glossaries} package that automatically adds acronyms to a list of acronyms. Example: \gls{um} is located in \gls{aa}. \gls{um} is located in \gls{aa}. 
+Acronyms are handled via the \href{https://www.ctan.org/pkg/glossaries}{\texttt{glossaries}} package that automatically adds acronyms to a list of acronyms. Example: \gls{um} is located in \gls{aa}. \gls{um} is located in \gls{aa}. 
 
 \section{Figures}
 
 Tikz figures are pre-compiled via the \texttt{external} command. To name a figure, use the \texttt{\\tikzsetnextfilename} command.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\tikzsetnextfilename{example_picture}
 	\begin{center}
 	\begin{tikzpicture}
