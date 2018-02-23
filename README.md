@@ -27,7 +27,7 @@ The Koma-Script Bundle is highly customizable, see the [Koma-Script guide](http:
 
 ### Fonts
 
-Fonts are handled with ```fontspec```, the main font can be changed in ```preamble.tex``` by e.g. uncommenting ```\setmainfont{Times New Roman}```. For finer control, use the ```\setkomafont``` commands (for a full list see Chapter 3.6 of the Koma-Script Guide).
+Fonts are handled with ```fontspec```, the main font can be changed in ```preamble.tex``` by e.g. uncommenting ```\setmainfont{Times New Roman}```. For finer control, use the ```\setkomafont``` commands (for a full list see Chapter 3.6 of the Koma-Script guide).
 
 ## Acknowledgement
 
