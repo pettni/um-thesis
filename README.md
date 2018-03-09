@@ -11,6 +11,8 @@ Template for a Ph.D. thesis at the University of Michigan. The template is based
 
 ## Compilation
 
+### Local
+
 The recommended tex environment is [TexLive](https://tug.org/texlive/). If you don't have the full installation, some packages might have to be installed manually to compile the template:
 
 	tlmgr install xelatex xstring todonotes bezos chngcntr xpatch doublestroke glossaries mfirstuc xfor biblatex tikz pgfplots
@@ -20,6 +22,10 @@ The template can be compiled with latexmk using [settings](http://ctan.mirrors.h
 	latexmk um-thesis.tex
 
 Alternatively, use an environment like Sublime Text + LatexTools that relies on ```latexmk``` for compilation.
+
+### Hosted
+
+The template works in both Sharelatex and Overleaf; just set the compiler to ```XeLaTeX``` in the project settings.
 
 ## Configuration
 
