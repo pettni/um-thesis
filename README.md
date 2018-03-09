@@ -25,7 +25,8 @@ Alternatively, use an environment like Sublime Text + LatexTools that relies on 
 
 ### Hosted
 
-The template works in both Sharelatex and Overleaf; just set the compiler to ```XeLaTeX``` in the project settings.
+The template works in both Sharelatex and Overleaf; just set the compiler to ```XeLaTeX``` in the project settings (or remove the ```fontspec``` package and use the default compiler ```pdflatex```). I don't know how ```tikzexternalize``` is handled in these environments, so the ```\tikzexternalize[prefix=figures_compiled/]``` command in ```preamble.tex``` should probably be removed.
+
 
 ## Configuration
 
