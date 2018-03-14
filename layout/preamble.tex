@@ -92,6 +92,30 @@
   	}
   }{}{\PatchFailed}
 
+\xpatchcmd{\addsubsectiontocentry}{%
+    \addtocentrydefault{subsection}{#1}{#2}%
+  }{%
+  	\ifstr{\chapapp}{Appendix}{
+		% We are in appendix
+		\addcontentsline{loapp}{subsection}{\protect\numberline{#1} #2}% numbered
+  	}{
+	    % We are before appendix
+		\addtocentrydefault{subsection}{#1}{#2}% numbered
+  	}
+  }{}{\PatchFailed}
+
+\xpatchcmd{\addsubsubsectiontocentry}{%
+    \addtocentrydefault{subsubsection}{#1}{#2}%
+  }{%
+  	\ifstr{\chapapp}{Appendix}{
+		% We are in appendix
+		\addcontentsline{loapp}{subsubsection}{\protect\numberline{#1} #2}% numbered
+  	}{
+	    % We are before appendix
+		\addtocentrydefault{subsubsection}{#1}{#2}% numbered
+  	}
+  }{}{\PatchFailed}
+
 
 % Control spacing
 \xapptocmd{\mainmatter}
