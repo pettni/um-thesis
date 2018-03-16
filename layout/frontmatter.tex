@@ -67,7 +67,7 @@
 \vfill
 \hspace{0pt}
 
-\cleardoublepage
+\clearpage
 
 % List of todos (hidden if todos disabled)
 \listoftodos
@@ -105,27 +105,30 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+
 % 7. Table of Contents
+\clearpage
+\phantomsection\pdfbookmark{\contentsname}{toc}
 \tableofcontents
 
 % 8a. List of Figures (remove if no figures)
-\cleardoublepage
+\clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
 % 8b. List of Tables (remove if no tables)
-\cleardoublepage
+\clearpage
 \phantomsection
 \listoftables
 \addcontentsline{toc}{chapter}{List of Tables}
 
 % 9. List of Appendicies (remove if no appendices)
-\cleardoublepage
+\clearpage
 \listofappendices
 
 % 10a. List of Acronyms (optional)
-\cleardoublepage
+\clearpage
 \printglossary[type=\acronymtype, title={List of Acronyms}]
 \addcontentsline{toc}{chapter}{List of Acronyms}
 
