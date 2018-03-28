@@ -57,6 +57,16 @@
 \newcommand*{\listofappendices}{\listoftoc{loapp}}
 \setuptoc{loapp}{totoc}
 
+% No boxes around links in frontmatter
+\xapptocmd{\frontmatter}{
+  \begingroup
+  \hypersetup{hidelinks}
+}{}{\PatchFailed}
+
+\xapptocmd{\mainmatter}{
+  \endgroup
+}{}{\PatchFailed}
+
 % Add "Appendices" to toc
 \xapptocmd{\appendix}{
 	\phantomsection %
