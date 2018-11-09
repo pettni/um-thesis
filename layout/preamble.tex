@@ -1,24 +1,28 @@
-\usepackage{amsmath, amsthm, amssymb, dsfont, mathdots, stmaryrd}
+\usepackage{amsmath, amsthm, amssymb, dsfont, mathdots}
 \usepackage{longtable, booktabs}
-\usepackage[allbordercolors=cyan]{hyperref}
 \usepackage{setspace}
 \usepackage[giveninits=true, maxbibnames=99, sortcites=true, backend=biber]{biblatex}
 \usepackage{xpatch}
 
-% Control fonts
+%%% FONTS %%%
 \usepackage{fontspec}
-% \setmainfont{Times New Roman}							% main font
-\setkomafont{sectioning}{\normalfont\bfseries}			% titles (chapter, section, etc)
+\setkomafont{sectioning}{\normalfont\bfseries}      % titles (chapter, section, etc)
 \setkomafont{title}{\normalfont\Large\bfseries}			% thesis title
 \setkomafont{caption}{\normalfont\small\bfseries}
 \setkomafont{captionlabel}{\normalfont\small\bfseries}
 
+% Optional: set custom font families (e.g, XITS family, Libertinus family, Minion Pro/Myriad Pro/Myriad Math)
+
+% \setmainfont{Libertinus Serif} 
+% \setkomafont{sectioning}{\normalfont\bfseries\fontspec{Libertinus Sans}}  % no serifs in titles
+% \usepackage{unicode-math}
+% \setmathfont{Libertinus Math} 
+
+%%%%%%%%%%%%%%%
+
 % Continuous footnote numbering
 \usepackage{chngcntr}
 \counterwithout{footnote}{chapter}
-
-% Bold font
-\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
 
 % Centered chapter headings
 \renewcommand{\raggedchapter}{\centering}
@@ -57,15 +61,12 @@
 \newcommand*{\listofappendices}{\listoftoc{loapp}}
 \setuptoc{loapp}{totoc}
 
-% No boxes around links in frontmatter
-\xapptocmd{\frontmatter}{
-  \begingroup
-  \hypersetup{hidelinks}
-}{}{\PatchFailed}
-
-\xapptocmd{\mainmatter}{
-  \endgroup
-}{}{\PatchFailed}
+% Links and link formatting 
+\usepackage[colorlinks,
+            linktoc=all,
+            linkcolor={blue!50!black}, 
+            citecolor={blue!50!black}, 
+            urlcolor={red!50!black}]{hyperref}
 
 % Add "Appendices" to toc
 \xapptocmd{\appendix}{
@@ -145,7 +146,7 @@
 \usetikzlibrary{calc, arrows.meta, shapes.geometric, positioning, scopes, shadows, decorations.markings, external, intersections, fit, patterns}
 \newlength{\figurewidth}
 \newlength{\figureheight}
-\tikzexternalize[prefix=figures_compiled/]
+% \tikzexternalize[prefix=figures_compiled/]
 
 % Dont externalize todos
 \makeatletter
