@@ -1,3 +1,5 @@
+\usepackage{morewrites}
+
 \usepackage{amsmath, amsthm, amssymb, dsfont, mathdots}
 \usepackage{longtable, booktabs}
 \usepackage{setspace}
@@ -5,19 +7,20 @@
 \usepackage{xpatch}
 
 %%% FONTS %%%
-\usepackage{fontspec}
-\setkomafont{sectioning}{\normalfont\bfseries}      % titles (chapter, section, etc)
-\setkomafont{title}{\normalfont\Large\bfseries}			% thesis title
-\setkomafont{caption}{\normalfont\small\bfseries}
-\setkomafont{captionlabel}{\normalfont\small\bfseries}
+\usepackage{fontspec, unicode-math}
 
-% Optional: set custom font families (e.g, XITS family, Libertinus family, Minion Pro/Myriad Pro/Myriad Math)
-
+% Optional: set font families for roman/sans serif/math
+% Suggestions: Libertinus family, XITS family, Minion Pro/Myriad Pro/Myriad Math)
 % \setmainfont{Libertinus Serif} 
-% \setkomafont{sectioning}{\normalfont\bfseries\fontspec{Libertinus Sans}}  % no serifs in titles
-% \setkomafont{title}{\normalfont\Large\bfseries\fontspec{Libertinus Sans}}  % no serifs in titles
-% \usepackage{unicode-math}
+% \setsansfont{Libertinus Sans}
+% \setmonofont{Libertinus Mono}
 % \setmathfont{Libertinus Math} 
+
+% Control fonts (family/series/size etc) for different elements
+\setkomafont{sectioning}{\sffamily\bfseries}      % titles (chapter, section, etc)
+\setkomafont{title}{\sffamily\bfseries\Large}			% thesis title
+\setkomafont{caption}{\rmfamily\bfseries\small}
+\setkomafont{captionlabel}{\rmfamily\bfseries\small}
 
 %%%%%%%%%%%%%%%
 
