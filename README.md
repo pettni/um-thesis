@@ -35,9 +35,9 @@ The Koma-Script Bundle is highly customizable, see the [Koma-Script guide](http:
 
 Fonts are handled with ```fontspec/unicode-math``` and the ```\setmainfont{}``` and ```\setmathfont{}``` commands. For finer control, use the ```\setkomafont{element}``` commands (for a full list of customizable elements, see Chapter 3.6 of the Koma-Script guide). Suggested font collections:
 
- - Libertinus: https://github.com/libertinus-fonts/libertinus/releases
+ - Libertinus: https://github.com/libertinus-fonts/libertinus
  - XITS family (no sans): https://github.com/alif-type/xits
- - Linux Libertine/Linux Bilonium (no math)
+ - Linux Libertine/Linux Biolinum (no math)
  - Minion Pro/Myriad Pro/Minion math (non-free)
 
 
