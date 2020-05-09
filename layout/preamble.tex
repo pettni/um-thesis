@@ -1,13 +1,19 @@
-\usepackage{morewrites}
-
-\usepackage{amsmath, amsthm, amssymb, dsfont, mathdots}
-\usepackage{longtable, booktabs}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{booktabs}
 \usepackage{setspace}
 \usepackage[giveninits=true, maxbibnames=99, sortcites=true, backend=biber]{biblatex}
 \usepackage{xpatch}
 
-%%% FONTS %%%
-\usepackage{fontspec, unicode-math}
+\usepackage{lipsum}
+
+% Page layout control
+\KOMAoption{fontsize}{12pt}
+\KOMAoption{twoside}{false}
+\KOMAoption{paper}{letter}
+\KOMAoption{DIV}{11}  % calculates margins
+
+% Fonts
+\usepackage{fontspec, unicode-math}  % comment to use pdflatex
 
 % Optional: set font families for roman/sans serif/math
 % Suggestions: Libertinus family, XITS family, Minion Pro/Myriad Pro/Myriad Math)
@@ -16,13 +22,16 @@
 % \setmonofont{Libertinus Mono}
 % \setmathfont{Libertinus Math} 
 
-% Control fonts (family/series/size etc) for different elements
+% Font control (family/series/size etc) for different elements
 \setkomafont{sectioning}{\sffamily\bfseries}      % titles (chapter, section, etc)
 \setkomafont{title}{\sffamily\bfseries\Large}			% thesis title
 \setkomafont{caption}{\rmfamily\bfseries\small}
 \setkomafont{captionlabel}{\rmfamily\bfseries\small}
 
 %%%%%%%%%%%%%%%
+
+% Prefix chapters with 'Chapter'
+\KOMAoption{chapterprefix}{true}
 
 % Continuous footnote numbering
 \usepackage{chngcntr}
@@ -58,7 +67,6 @@
 \renewcommand*{\@pnumwidth}{2.2em}
 \renewcommand*{\@tocrmarg}{3.2em}
 \makeatother
-\renewcommand{\contentsname}{Table of Contents}
 
 % Create list of appendices
 \newcommand\listofloappname{List of Appendices}
@@ -74,73 +82,73 @@
 
 % Add "Appendices" to toc
 \xapptocmd{\appendix}{
-	\phantomsection %
-	\addcontentsline{toc}{chapter}{Appendices}
+  \phantomsection %
+  \addcontentsline{toc}{chapter}{Appendices}
 }{}{\PatchFailed}
 
 % Add chapter/appendix to correct list
 \xpatchcmd{\addchaptertocentry}{%
     \addtocentrydefault{chapter}{#1}{#2}%
   }{%
-  	\ifstr{\chapapp}{Appendix}{
-		% We are in appendix
-	    \ifstr{#1}{}
-	      {\addtocentrydefault{chapter}{#1}{#2}} % numbered
-	      {\addcontentsline{loapp}{chapter}{\chapapp{} #1. #2}} %unnumbered
-  	}{
-	    % We are before appendix
-	    \ifstr{#1}{}
-	      {\addtocentrydefault{chapter}{#1}{#2}}
-	      {\addtocentrydefault{chapter}{}{\chapapp{} #1. #2}}
-  	}
+    \Ifstr{\chapapp}{Appendix}{
+      % We are in appendix
+      \Ifstr{#1}{}
+        {\addtocentrydefault{chapter}{#1}{#2}} % numbered
+        {\addcontentsline{loapp}{chapter}{\chapapp{} #1. #2}} %unnumbered
+    }{
+      % We are before appendix
+      \Ifstr{#1}{}
+        {\addtocentrydefault{chapter}{#1}{#2}}
+        {\addtocentrydefault{chapter}{}{\chapapp{} #1. #2}}
+    }
   }{}{\PatchFailed}
 
 \xpatchcmd{\addsectiontocentry}{%
     \addtocentrydefault{section}{#1}{#2}%
   }{%
-  	\ifstr{\chapapp}{Appendix}{
-		% We are in appendix
-		\addcontentsline{loapp}{section}{\protect\numberline{#1} #2}% numbered
-  	}{
-	    % We are before appendix
-		\addtocentrydefault{section}{#1}{#2}% numbered
-  	}
+    \Ifstr{\chapapp}{Appendix}{
+      % We are in appendix
+      \addcontentsline{loapp}{section}{\protect\numberline{#1} #2}% numbered
+    }{
+      % We are before appendix
+      \addtocentrydefault{section}{#1}{#2}% numbered
+    }
   }{}{\PatchFailed}
 
 \xpatchcmd{\addsubsectiontocentry}{%
     \addtocentrydefault{subsection}{#1}{#2}%
   }{%
-  	\ifstr{\chapapp}{Appendix}{
-		% We are in appendix
-		\addcontentsline{loapp}{subsection}{\protect\numberline{#1} #2}% numbered
-  	}{
-	    % We are before appendix
-		\addtocentrydefault{subsection}{#1}{#2}% numbered
-  	}
+    \Ifstr{\chapapp}{Appendix}{
+      % We are in appendix
+      \addcontentsline{loapp}{subsection}{\protect\numberline{#1} #2}% numbered
+    }{
+      % We are before appendix
+      \addtocentrydefault{subsection}{#1}{#2}% numbered
+    }
   }{}{\PatchFailed}
 
 \xpatchcmd{\addsubsubsectiontocentry}{%
     \addtocentrydefault{subsubsection}{#1}{#2}%
   }{%
-  	\ifstr{\chapapp}{Appendix}{
-		% We are in appendix
-		\addcontentsline{loapp}{subsubsection}{\protect\numberline{#1} #2}% numbered
-  	}{
-	    % We are before appendix
-		\addtocentrydefault{subsubsection}{#1}{#2}% numbered
-  	}
+    \Ifstr{\chapapp}{Appendix}{
+      % We are in appendix
+      \addcontentsline{loapp}{subsubsection}{\protect\numberline{#1} #2}% numbered
+    }{
+      % We are before appendix
+      \addtocentrydefault{subsubsection}{#1}{#2}% numbered
+    }
   }{}{\PatchFailed}
 
 
 % Control spacing
 \xapptocmd{\mainmatter}
 {
-	\onehalfspacing
+  \onehalfspacing
 }{}{\PatchFailed}
 \xapptocmd{\backmatter}
 {
-	\singlespacing
-	\sloppy % to not have overfull hboxes in reference list
+  \singlespacing
+  \sloppy % to not have overfull hboxes in reference list
 }{}{\PatchFailed}
 
 

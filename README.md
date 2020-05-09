@@ -3,7 +3,7 @@
 Template for a Ph.D. thesis at the University of Michigan. The template is based on the Komascript ```scrbook``` class and is intended to be a modern, lightweight, and customizable alternative to the different ```rac.sty```-based classes (the original ```rac.sty``` was created in 1988!). Example of complete thesis: https://deepblue.lib.umich.edu/handle/2027.42/140897.
 
 ## Features
- - Follows [Rackham requirements](http://www.rackham.umich.edu/content/formatting-dissertation)
+ - Follows [Rackham requirements](https://rackham.umich.edu/navigating-your-degree/formatting-guidelines/) (**open an issue or a PR if this is no longer the case**)
  - List of acronyms (```glossaries``` package)
  - List of appendices
  - Clutter-free main files
@@ -15,7 +15,7 @@ Template for a Ph.D. thesis at the University of Michigan. The template is based
 
 The recommended tex environment is [TexLive](https://tug.org/texlive/). If you don't have the full installation, some packages might have to be installed manually to compile the template:
 
-	tlmgr install xelatex xstring todonotes bezos chngcntr xpatch doublestroke glossaries mfirstuc xfor biblatex tikz pgfplots unicode-math
+    tlmgr install koma-script xetex morewrites mathdots booktabs setspace textcase datatool xstring todonotes chngcntr xpatch doublestroke glossaries mfirstuc xfor biblatex biber pgf pgfplots unicode-math lipsum
 
 The template can be compiled with latexmk using [settings](http://ctan.mirrors.hoobly.com/support/latexmk/latexmk.pdf) defined in ```latexmkrc```. The default compiler is ```xelatex``` (to use ```pdflatex``` the ```fontspec``` package must be removed in ```preamble.tex```).
 
