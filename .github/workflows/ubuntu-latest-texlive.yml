@@ -10,27 +10,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install texlive
-        run: sudo apt-get update && sudo apt-get install texlive-latex-base texlive-xetex latexmk biber
-
       - uses: actions/checkout@v2
 
       - name: Set up PATH
         run: |
           echo "::add-path::/tmp/texlive/bin/x86_64-linux"
 
-      - name: Download and install-tl.zip
+      - name: Download and install texlive
         run: |
           curl -s -O -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip
           unzip -q install-tl.zip
           mv install-tl-2* install-tl-dir
-          install-tl-dir/install-tl --profile .gitlab/workflows/texlive.profile
+          sudo apt-get update && sudo apt-get install tree && tree
+          install-tl-dir/install-tl --profile .github/workflows/texlive.profile
 
-      - name: Run tlmgr install
+      - name: Install additional tlmgr packages
         run: |
-          tlmgr install koma-script xetex morewrites mathdots booktabs setspace
-          tlmgr install textcase datatool xstring todonotes chngcntr xpatch doublestroke
-          tlmgr install glossaries mfirstuc xfor biblatex biber pgf pgfplots unicode-math lipsum
+          tlmgr install latexmk xetex biblatex biber pgf pgfplots koma-script
+          tlmgr install amsmath amscls amsfonts textcase datatool xstring todonotes chngcntr xpatch doublestroke
+          tlmgr install glossaries mfirstuc morewrites mathdots booktabs setspace unicode-math lipsum
+          tlmgr install infwarerr ltxcmds
 
       - name: Run latexmk
         run: |
