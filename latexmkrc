@@ -10,7 +10,7 @@ sub makeglossaries {
 push @generated_exts, 'glo', 'gls', 'glg';
 push @generated_exts, 'acn', 'acr', 'alg';
 
-$clean_ext .= ' %R.ist %R.xdy %R.loapp %R.tdo %R.auxlock %R.bbl %R.run.xml %R.xdv';
+$clean_ext .= ' %R.synctex.gz %R.ist %R.xdy %R.loapp %R.tdo %R.auxlock %R.bbl %R.run.xml %R.xdv %R.pdf';
 $pdf_mode = 5;        # use xelatex
 $force_mode = 1;
 

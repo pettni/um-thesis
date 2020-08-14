@@ -1,3 +1,5 @@
+![CI](https://github.com/pettni/um-thesis/workflows/ubuntu-20.04/badge.svg)
+
 # um-thesis
 
 Template for a Ph.D. thesis at the University of Michigan. The template is based on the Komascript ```scrbook``` class and is intended to be a modern, lightweight, and customizable alternative to the different ```rac.sty```-based classes (the original ```rac.sty``` was created in 1988!). Example of complete thesis: https://deepblue.lib.umich.edu/handle/2027.42/140897.
@@ -21,8 +23,9 @@ The recommended tex environment is [TexLive](https://tug.org/texlive/) with a ne
 
  * On Ubuntu 20.04 the latex packages provided in APT work fine. Install all necessary packages via
 
-    sudo apt-get install texlive-latex-base texlive-xetex latexmk biber
-
+```zsh
+sudo apt-get install texlive-latex-base texlive-xetex latexmk biber
+```
 
  * On Ubuntu 18.04 the latex packages in APT are dated and will not work out of the box. See https://www.tug.org/texlive/acquire-netinstall.html for the manual installation procedure.
 

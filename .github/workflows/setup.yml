@@ -1,4 +1,4 @@
-name: CI
+name: ubuntu-20.04
 
 on:
   push:
@@ -16,7 +16,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run latexmk
-        run: latexmk
+        run: |
+          latexmk -c
+          latexmk
 
       - uses: actions/upload-artifact@v2
         with:
