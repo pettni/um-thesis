@@ -23,19 +23,23 @@ The recommended tex environment is [TexLive](https://tug.org/texlive/) with a ne
 
  * On Ubuntu 20.04 the latex packages provided in APT work fine. Install all necessary packages via
 
-```zsh
+```
 sudo apt-get install texlive-latex-base texlive-xetex latexmk biber
 ```
 
  * On Ubuntu 18.04 the latex packages in APT are dated and will not work out of the box. See https://www.tug.org/texlive/acquire-netinstall.html for the manual installation procedure.
 
- * In a limited manual install this installs the necessary packages
+ * For a (non-full) TexLive install this commands installs all required CTAN packages
 
-    tlmgr install koma-script xetex morewrites mathdots booktabs setspace textcase datatool xstring todonotes chngcntr xpatch doublestroke glossaries mfirstuc xfor biblatex biber pgf pgfplots unicode-math lipsum
+```
+tlmgr install koma-script xetex morewrites mathdots booktabs setspace textcase datatool xstring todonotes chngcntr xpatch doublestroke glossaries mfirstuc xfor biblatex biber pgf pgfplots unicode-math lipsum
+```
 
 The template can be compiled with latexmk using [settings](http://ctan.mirrors.hoobly.com/support/latexmk/latexmk.pdf) defined in ```latexmkrc```. The default compiler is ```xelatex``` (to use ```pdflatex``` the ```fontspec``` package must be removed in ```preamble.tex```).
 
-	latexmk
+```
+latexmk
+```
 
 Alternatively, use an environment like Sublime Text + [LatexTools](https://latextools.readthedocs.io/en/latest/) or VS Code + [LaTeXWorkshop](https://github.com/James-Yu/LaTeX-Workshop) that uses ```latexmk``` under the hood.
 
