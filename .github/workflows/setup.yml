@@ -8,15 +8,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Install texlive
-        run: sudo apt-get update && sudo apt-get install texlive-full 
+        run: sudo apt-get update && sudo apt-get install texlive-latex-base texlive-xetex latexmk biber
 
       - uses: actions/checkout@v2
 
       - name: Run latexmk
-        run: latexmk -r latexmkrc
+        run: latexmk
 
       - uses: actions/upload-artifact@v2
         with:
