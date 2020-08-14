@@ -10,8 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-#      - name: Install texlive
-#        run: sudo apt-get update && sudo apt-get install texlive-full 
+      - name: Install texlive
+        run: sudo apt-get update && sudo apt-get install texlive-full 
 
       - uses: actions/checkout@v2
 
@@ -20,5 +20,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: pdf
-          path: ${GITHUB_WORKSPACE}/um-thesis.pdf
+          name: Compiled pdf
+          path: um-thesis.pdf
