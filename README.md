@@ -1,4 +1,4 @@
-![CI](https://github.com/pettni/um-thesis/workflows/ubuntu-20.04/badge.svg)
+![CI](https://github.com/pettni/um-thesis/workflows/ubuntu-latest-apt/badge.svg) ![CI](https://github.com/pettni/um-thesis/workflows/ubuntu-20.04-texlive/badge.svg)
 
 # um-thesis
 

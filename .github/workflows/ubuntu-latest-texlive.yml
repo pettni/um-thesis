@@ -1,0 +1,39 @@
+name: ubuntu-latest-texlive
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install texlive
+        run: sudo apt-get update && sudo apt-get install texlive-latex-base texlive-xetex latexmk biber
+
+      - uses: actions/checkout@v2
+
+      - name: Download and install-tl.zip
+        run: |
+          curl -s -O -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip
+          unzip -q install-tl.zip
+          mv install-tl-2* install-tl-dir
+          install-tl-dir/install-tl --profile .gitlab/workflows/texlive.profile
+
+      - name: Run tlmgr install
+        run: |
+          tlmgr install koma-script xetex morewrites mathdots booktabs setspace
+          tlmgr install textcase datatool xstring todonotes chngcntr xpatch doublestroke
+          tlmgr install glossaries mfirstuc xfor biblatex biber pgf pgfplots unicode-math lipsum
+
+      - name: Run latexmk
+        run: |
+          latexmk -c
+          latexmk
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Compiled pdf
+          path: um-thesis.pdf
