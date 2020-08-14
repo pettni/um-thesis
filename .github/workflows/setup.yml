@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ master ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ mater ]
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
 
       - name: Run latexmk
         run: latexmk
-    
+
       - uses: actions/upload-artifact@v2
         with:
           name: pdf
