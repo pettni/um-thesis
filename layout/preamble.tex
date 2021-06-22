@@ -23,15 +23,19 @@
 % \setmathfont{Libertinus Math} 
 
 % Font control (family/series/size etc) for different elements
-\setkomafont{sectioning}{\sffamily\bfseries}      % titles (chapter, section, etc)
-\setkomafont{title}{\sffamily\bfseries\Large}			% thesis title
-\setkomafont{caption}{\rmfamily\bfseries\small}
-\setkomafont{captionlabel}{\rmfamily\bfseries\small}
+\setkomafont{sectioning}{\bfseries}  % titles (chapter, section, etc)
+\setkomafont{title}{\bfseries\Large} % thesis title
+\setkomafont{caption}{\bfseries\small}
+\setkomafont{captionlabel}{\bfseries\small}
 
 %%%%%%%%%%%%%%%
 
 % Prefix chapters with 'Chapter'
 \KOMAoption{chapterprefix}{true}
+\renewcommand*{\chapterformat}{%
+  \mbox{\chapappifchapterprefix{\nobreakspace}\thechapter
+  \IfUsePrefixLine{}{\enskip}}%
+}
 
 % Continuous footnote numbering
 \usepackage{chngcntr}
@@ -78,7 +82,7 @@
             linktoc=all,
             linkcolor={blue!50!black}, 
             citecolor={blue!50!black}, 
-            urlcolor={red!50!black}]{hyperref}
+            urlcolor={blue!50!black}]{hyperref}
 
 % Add "Appendices" to toc
 \xapptocmd{\appendix}{
