@@ -1,10 +1,25 @@
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{booktabs}
 \usepackage{setspace}
-\usepackage[giveninits=true, maxbibnames=99, sortcites=true, backend=biber]{biblatex}
+\usepackage[giveninits=true, maxbibnames=99, sortcites=true, backend=biber, style=apa, natbib]{biblatex}
 \usepackage{xpatch}
 
 \usepackage{lipsum}
+
+% Hide/show todo list
+\usepackage[colorinlistoftodos, backgroundcolor=green!40]{todonotes}
+
+% change color for reviewing purpose
+\usepackage{xcolor}
+
+\definecolor{dark-brown}{RGB}{60,19,33}
+
+\newcommand{\changecolor}{black} % red/black/brown
+\newcommand{\changecolortwo}{black} % red/black/blue
+% \textcolor{\changecolor}{}
+
+% for comment
+\usepackage{comment}
 
 % Page layout control
 \KOMAoption{fontsize}{12pt}
@@ -22,10 +37,14 @@
 % \setmonofont{Libertinus Mono}
 % \setmathfont{Libertinus Math} 
 
+% add by  Pei-Yao
+% seem to already be singlespacing
+% \usepackage[font=singlespacing]{caption}
+
 % Font control (family/series/size etc) for different elements
 \setkomafont{sectioning}{\bfseries}  % titles (chapter, section, etc)
 \setkomafont{title}{\bfseries\Large} % thesis title
-\setkomafont{caption}{\bfseries\small}
+\setkomafont{caption}{\bfseries\small} % this gives 11 pt
 \setkomafont{captionlabel}{\bfseries\small}
 
 %%%%%%%%%%%%%%%
@@ -40,6 +59,28 @@
 % Continuous footnote numbering
 \usepackage{chngcntr}
 \counterwithout{footnote}{chapter}
+
+% Add by Pei-Yao for footnote font size. Keep it at 10 for now
+\addtokomafont{footnote}{\fontsize{10pt}{12pt}\selectfont}
+
+% set quote to have single spacing
+% \doublespacing
+% \onehalfspacing
+% \singlespace
+
+\expandafter\def\expandafter\quote\expandafter{\quote\singlespace}
+
+
+% set itemize (list) to have single spacing
+
+% seems working but cause errors
+% \expandafter\def\expandafter\itemize\expandafter{\itemize\singlespace}
+
+
+\usepackage{enumitem}
+%\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setlist[itemize]{before=\singlespacing,after=\singlespacing}
+
 
 % Centered chapter headings
 \renewcommand{\raggedchapter}{\centering}
@@ -148,13 +189,13 @@
 \xapptocmd{\mainmatter}
 {
   \onehalfspacing
+  % \singlespacing
 }{}{\PatchFailed}
 \xapptocmd{\backmatter}
 {
   \singlespacing
   \sloppy % to not have overfull hboxes in reference list
 }{}{\PatchFailed}
-
 
 % Tikz
 \usepackage{tikz, pgfplots}
@@ -171,7 +212,7 @@
 
 % Nomenclature
 \usepackage[toc,acronym,nonumberlist,subentrycounter]{glossaries}
-\makeglossaries
+%\makeglossaries
 \loadglsentries[main]{layout/acronyms.tex}
 % \setkomafont{descriptionlabel}{\normalfont}
 \glstocfalse

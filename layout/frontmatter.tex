@@ -10,12 +10,12 @@
    % Put the title itself in 1.5-spaced format.
    \begin{onehalfspacing}
     % Insert the title.
-    {\usekomafont{title} A Ph.D Thesis Template Conforming to Requirements at the University of Michigan} %
+    {\usekomafont{title} My Dissertation Title } %
    \end{onehalfspacing} \\[4ex] %
    % Print the word 'by'.
    by \\[2ex] %
    % Insert the author
-   Jan Banan \\ %
+   Full Name \\ %
    % More rubber space
    \vfill %
    % Text from guidelines
@@ -24,10 +24,10 @@
    % Name of degree
    Doctor of Philosophy \\ %
    % Department
-   (Name of the Program) \\ %
+   (School/Department) \\ %
    in the University of Michigan \\ %
    % Year of completion
-   2017 %
+   20XX %
   \end{center} %
   % More rubber space
   \vfill %
@@ -38,10 +38,10 @@
    % Horizontal spacing
    \hspace{1in} %
    % Insert the committee (in a box).
-   \parbox{4.2in}{Professor Sven Svensson, Chair\\
-                  Assistant Professor Sara Svensson\\
-                  Professor John Doe\\
-                  Assistant Professor Jane Doe}
+   \parbox{4.2in}{Professor Cassie Huang, Chair\\
+                  Associate Professor Peter Novak\\
+                  Professor Deborah White\\
+                  Assistant Professor Ned Evans\\}
   \end{flushleft} %
  \end{singlespace} %
 \end{titlepage}
@@ -56,11 +56,11 @@
 
 \begin{center}
 \begin{onehalfspacing}
-  Jan Banan \\
-  \href{mailto:jan.banan@umich.edu}{\color{black}jan.banan@umich.edu} \\
-  ORCID iD: \href{http://orcid.org/9999-9999-9999-9999}{\color{black}9999-9999-9999-9999}\\
+  Full Name \\
+  \href{mailto:uniqname@umich.edu}{\color{black}uniqname@umich.edu} \\
+  ORCID iD: \href{http://orcid.org/0000-0002-7415-901X}{\color{black}0000-0002-7415-901X}\\
   \vspace{0.3in}
-  \copyright\;Jan Banan 2017
+  \copyright\;Full Name 20XX
 \end{onehalfspacing}
 \end{center}
 
@@ -70,7 +70,7 @@
 \clearpage
 
 % List of todos (hidden if todos disabled)
-\listoftodos
+%\listoftodos
 
 \pagenumbering{roman}
 \setcounter{page}{2}
@@ -78,35 +78,23 @@
 % 4. Dedication (optional)
 \chapter{Dedication}
 \begin{onehalfspace}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\input{layout/dedication}
+%To my parents, Der-Ming Hung and Mei-Chou Wu\\
+%To my sister, Min-Wei Hung\\
+%To all the mentors and teachers whom I met along the way\\
 \end{onehalfspace}
 
 % 5. Acknowledgements (optional)
 \chapter{Acknowledgments}
 \begin{onehalfspace}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\input{layout/acknowledgements}
 \end{onehalfspace}
 
 % 6. Preface (optional)
-\chapter{Preface}
-\begin{onehalfspace}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\end{onehalfspace}
+%\chapter{Preface}
+%\begin{onehalfspace}
+%(TBD)
+%\end{onehalfspace}
 
 
 % 7. Table of Contents
@@ -129,21 +117,28 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 % 9. List of Appendicies (remove if no appendices)
-\clearpage
-{\hypersetup{linkcolor=black}\listofappendices}
+%\clearpage
+%{\hypersetup{linkcolor=black}\listofappendices}
 
 % 10a. List of Acronyms (optional)
-\clearpage
-\phantomsection
-\addcontentsline{toc}{chapter}{List of Acronyms}
-\printglossary[type=\acronymtype, title={List of Acronyms}]
+%\clearpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{List of Acronyms}
+%\printglossary[type=\acronymtype, title={List of Acronyms}]
 
 % 10b. List of Symbols (optional)
-\chapter{List of Symbols}
-\input{layout/notation}
+%\chapter{List of Symbols}
+%\input{layout/notation}
 
 % 11. Abstract
 \chapter{Abstract}
+
+% Spacing Reference: http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907092
+
+% double
+% \doublespacing
+
+% 1.5
 \onehalfspacing
 
 \input{layout/abstract}

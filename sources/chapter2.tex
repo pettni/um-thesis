@@ -1,54 +1,9 @@
 %!TEX root = ../um-thesis.tex
 
-\chapter{Overview}
+\chapter{Literature Review}\label{chap:2}
 
-\section{Compilation}
-
-The recommended method of typesetting is to use \texttt{latexmk} which handles acronyms via the \texttt{latexmkrc} file.
-
-\section{Fonts}
-
-Fonts are configured in \texttt{preamble.tex} via the Komascript font settings, using the fontspec and unicode-math packages.
-
-\begin{equation}
-	e^\varphi + 5 = 0
-\end{equation}
-
-\section{Citations}
-
-Citations are handled with \href{https://www.ctan.org/pkg/biblatex}{\texttt{biblatex}} and \texttt{biber} as backend. Different citation styles can be used by changing the arguments when loading the biblatex package. Example citation: \cite{Shannon:1949ti}.
-
-\section{Acronyms}
-
-Acronyms are handled via the \href{https://www.ctan.org/pkg/glossaries}{\texttt{glossaries}} package that automatically adds acronyms to a list of acronyms. Example: \gls{um} is located in \gls{aa}. \gls{um} is located in \gls{aa}. 
-
-\section{Figures}
-
-Tikz figures are pre-compiled via the \texttt{external} command. To name a figure, use the \texttt{tikzsetnextfilename} command.
-
-\begin{figure}[ht]
-	\tikzsetnextfilename{example_picture}
-	\begin{center}
-	\begin{tikzpicture}[
-    	mybox/.style = {draw, rounded corners, minimum height=1.2cm, text width=2cm, align=center}
-  		]
-		\node[mybox, fill=green!70!black] (i1) {Item 1};
-		\node[mybox, fill=blue!50, right=of i1] (i2) {Item 2};
-		\draw[-latex, thick] (i1) -- node[above] {$x$} (i2);
-	\end{tikzpicture}
-	\end{center}
-	\caption{Example illustration.}
-\end{figure}
-
-\section{List of Todos}
-
-The \href{https://www.ctan.org/pkg/todonotes}{todonotes} package is a convenient way to keep a \todo{Improve wording here}{list of todos during} the writing.  
-
-\todo[inline, color=blue!40]{Re-read this part}
-
-Todos can be hidden by loading the package the \texttt{disable} argument.
-
-
-\section{More text}
-
-\lipsum[1-12]
+\input{sources/relatedwork/overview}
+\input{sources/relatedwork/area1}
+\input{sources/relatedwork/area2}
+\input{sources/relatedwork/area3}
+\input{sources/relatedwork/summary}

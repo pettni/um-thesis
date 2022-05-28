@@ -1,20 +1,23 @@
 %!TEX program=xelatex
 %!TEX options=--shell-escape
 
+% pettni-github-um-thesis-master
+% forked from Github by pettni: https://github.com/pettni/um-thesis
+% Modified by https://github.com/peiyaoh to provide additional instructions, structure, styling, and packages.
+
 \documentclass{scrbook}
 
-% Hide/show todo list
-\usepackage[disable]{todonotes}
-% \usepackage[colorinlistoftodos, backgroundcolor=green!40]{todonotes}
+
 
 \input{layout/preamble}
 \input{layout/definitions}
 \input{layout/environ}
 
-% Compile selected parts only
-% \includeonly{sources/chapter2, sources/appendix1}
+
 
 \begin{document}
+
+
 
 \frontmatter
 
@@ -24,13 +27,20 @@
 
 \include{sources/chapter1}
 \include{sources/chapter2}
+\include{sources/chapter3}
+\include{sources/chapter4}
+\include{sources/chapter5}
+\include{sources/chapter6}
 
-\appendix
+%\appendix
 
-\include{sources/appendix1}
+%\include{sources/appendix1.tex}
 
 \backmatter
 
+
+
+% originally from the template
 \printbibliography[heading=bibintoc]
 
 \end{document}
